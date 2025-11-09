@@ -50,68 +50,50 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 pt-20 pb-24">
+      <section className="container mx-auto px-6 pt-16 pb-16">
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.08] rounded-full px-4 py-2 mb-8">
             <span className="w-2 h-2 bg-[#00ff9d] rounded-full animate-pulse"></span>
             <span className="text-sm text-gray-300">AI-Powered Application Builder</span>
           </div>
 
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-[1.1]">
-            Think better.
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ff9d] via-purple-400 to-cyan-400">
-              Build faster.
-            </span>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
+            Build applications with AI
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
             Transform your ideas into production-ready applications using AI.
             No code, no complexity—just describe what you want to build.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Link
               href="/builder"
-              className="group relative bg-gradient-to-r from-[#00ff9d] to-cyan-400 text-black px-10 py-5 rounded-2xl text-lg font-semibold hover:shadow-2xl hover:shadow-[#00ff9d]/40 transition-all"
+              className="bg-gradient-to-r from-[#00ff9d] to-cyan-400 text-black px-10 py-4 rounded-2xl text-base font-semibold hover:shadow-2xl hover:shadow-[#00ff9d]/40 transition-all whitespace-nowrap"
             >
-              <span className="relative z-10 flex items-center justify-center gap-2">
-                Start Building Free
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
+              Start Building Free →
             </Link>
             <Link
               href="/consultation"
-              className="bg-white/[0.05] backdrop-blur-sm text-white px-10 py-5 rounded-2xl text-lg font-semibold hover:bg-white/[0.08] transition-all border border-white/[0.08] hover:border-white/20"
+              className="bg-white/[0.05] backdrop-blur-sm text-white px-10 py-4 rounded-2xl text-base font-semibold hover:bg-white/[0.08] transition-all border border-white/[0.08] hover:border-white/20 whitespace-nowrap"
             >
               Get AI Consultation
             </Link>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 max-w-3xl mx-auto">
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#00ff9d]/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 hover:bg-white/[0.05] transition-all">
-                <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00ff9d] to-cyan-400 mb-2">10K+</div>
-                <div className="text-sm text-gray-400">Apps Built</div>
-              </div>
+          <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+            <div className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-xl p-6 hover:bg-white/[0.05] transition-all">
+              <div className="text-3xl font-bold text-[#00ff9d] mb-1">10K+</div>
+              <div className="text-xs text-gray-400">Apps Built</div>
             </div>
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 hover:bg-white/[0.05] transition-all">
-                <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">50+</div>
-                <div className="text-sm text-gray-400">AI Models</div>
-              </div>
+            <div className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-xl p-6 hover:bg-white/[0.05] transition-all">
+              <div className="text-3xl font-bold text-purple-400 mb-1">50+</div>
+              <div className="text-xs text-gray-400">AI Models</div>
             </div>
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 hover:bg-white/[0.05] transition-all">
-                <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-2">99.9%</div>
-                <div className="text-sm text-gray-400">Uptime</div>
-              </div>
+            <div className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-xl p-6 hover:bg-white/[0.05] transition-all">
+              <div className="text-3xl font-bold text-cyan-400 mb-1">99.9%</div>
+              <div className="text-xs text-gray-400">Uptime</div>
             </div>
           </div>
         </div>
