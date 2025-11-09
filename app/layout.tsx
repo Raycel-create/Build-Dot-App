@@ -6,8 +6,8 @@ import AIAdvisorWidget from "@/components/ai-advisor/AIAdvisorWidget";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Build.App - Create Applications with AI",
-  description: "Build applications with AI - no coding required. Clone any app with AI-powered generation.",
+  title: "Emergent Advisor Hub - Build Applications with AI",
+  description: "Transform your ideas into production-ready applications using AI. No code, no complexity—just describe what you want to build.",
 };
 
 export default function RootLayout({

@@ -58,7 +58,7 @@ export default function AIAdvisorWidget() {
       name: "Emergent Advisor",
       icon: "✨",
       description: "Specialized app building expert",
-      color: "from-emerald-500 to-green-600"
+      color: "from-[#00ff9d] to-green-500"
     }
   ];
 
@@ -124,16 +124,16 @@ export default function AIAdvisorWidget() {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-emerald-500 to-green-600 text-white p-4 rounded-full shadow-2xl hover:shadow-emerald-500/50 transition-all hover:scale-110 group"
+        className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-[#00ff9d] to-green-500 text-black p-4 rounded-full shadow-2xl hover:shadow-[#00ff9d]/50 transition-all hover:scale-110 group"
       >
         <div className="flex items-center gap-2">
           <span className="text-2xl">💡</span>
-          <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap font-medium">
+          <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap font-semibold">
             Need Help?
           </span>
         </div>
         {credits && (credits.freeMessagesLeft > 0 || credits.paidCredits > 0) && (
-          <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold">
+          <div className="absolute -top-2 -right-2 bg-[#00ff9d] text-black text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold">
             {credits.freeMessagesLeft + credits.paidCredits}
           </div>
         )}
@@ -144,7 +144,7 @@ export default function AIAdvisorWidget() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
           <div className="bg-[#0a0b0c] border border-white/10 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
             {/* Header */}
-            <div className="bg-gradient-to-r from-emerald-500/10 to-green-600/10 border-b border-white/10 p-6">
+            <div className="bg-gradient-to-r from-[#00ff9d]/10 to-green-500/10 border-b border-white/10 p-6">
               <div className="flex items-center justify-between mb-2">
                 <h2 className="text-2xl font-bold text-white">AI Advisor</h2>
                 <button
@@ -167,8 +167,8 @@ export default function AIAdvisorWidget() {
               {/* Credits Display */}
               {credits && (
                 <div className="flex gap-4 text-sm">
-                  <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg px-4 py-2">
-                    <span className="text-emerald-400 font-semibold">{credits.freeMessagesLeft}</span>
+                  <div className="bg-[#00ff9d]/10 border border-[#00ff9d]/20 rounded-lg px-4 py-2">
+                    <span className="text-[#00ff9d] font-semibold">{credits.freeMessagesLeft}</span>
                     <span className="text-gray-400 ml-1">free messages left today</span>
                   </div>
                   {credits.paidCredits > 0 && (
@@ -192,9 +192,9 @@ export default function AIAdvisorWidget() {
                       <button
                         key={model.id}
                         onClick={() => setSelectedAI(model.id)}
-                        className="group bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-emerald-500/50 rounded-2xl p-6 text-left transition-all"
+                        className="group bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-[#00ff9d]/50 rounded-2xl p-6 text-left transition-all"
                       >
-                        <div className={`w-12 h-12 bg-gradient-to-r ${model.color} rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform`}>
+                        <div className={`w-12 h-12 bg-gradient-to-r ${model.color} rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
                           {model.icon}
                         </div>
                         <h4 className="text-white font-semibold text-lg mb-2">{model.name}</h4>
@@ -237,7 +237,7 @@ export default function AIAdvisorWidget() {
                       <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
                         <div className={`max-w-[80%] rounded-2xl p-4 ${
                           msg.role === "user"
-                            ? "bg-gradient-to-r from-emerald-500 to-green-600 text-white"
+                            ? "bg-gradient-to-r from-[#00ff9d] to-green-500 text-black"
                             : "bg-white/5 border border-white/10 text-gray-200"
                         }`}>
                           <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
@@ -251,9 +251,9 @@ export default function AIAdvisorWidget() {
                       <div className="flex justify-start">
                         <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
                           <div className="flex gap-1">
-                            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce"></div>
-                            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></div>
-                            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
+                            <div className="w-2 h-2 bg-[#00ff9d] rounded-full animate-bounce"></div>
+                            <div className="w-2 h-2 bg-[#00ff9d] rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></div>
+                            <div className="w-2 h-2 bg-[#00ff9d] rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
                           </div>
                         </div>
                       </div>
@@ -268,12 +268,12 @@ export default function AIAdvisorWidget() {
                       onChange={(e) => setInput(e.target.value)}
                       onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
                       placeholder="Ask for advice about your app idea..."
-                      className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition text-sm"
+                      className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#00ff9d] transition text-sm"
                     />
                     <button
                       onClick={handleSendMessage}
                       disabled={!input.trim() || isLoading}
-                      className="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-3 rounded-xl font-medium hover:from-emerald-600 hover:to-green-700 transition disabled:opacity-50"
+                      className="bg-gradient-to-r from-[#00ff9d] to-green-500 text-black px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-[#00ff9d]/50 transition disabled:opacity-50"
                     >
                       Send
                     </button>
@@ -294,10 +294,10 @@ export default function AIAdvisorWidget() {
               You've used your {creditsInfo.FREE_MESSAGES_PER_DAY} free messages today.
               Unlock {creditsInfo.PAID_CREDITS_MESSAGES} more questions for just ${creditsInfo.PAID_CREDITS_COST}!
             </p>
-            <div className="bg-gradient-to-r from-emerald-500/10 to-green-600/10 border border-emerald-500/20 rounded-xl p-6 mb-6">
+            <div className="bg-gradient-to-r from-[#00ff9d]/10 to-green-500/10 border border-[#00ff9d]/20 rounded-xl p-6 mb-6">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-white font-semibold">25 Messages</span>
-                <span className="text-2xl font-bold text-emerald-400">${creditsInfo.PAID_CREDITS_COST}</span>
+                <span className="text-2xl font-bold text-[#00ff9d]">${creditsInfo.PAID_CREDITS_COST}</span>
               </div>
               <p className="text-gray-400 text-sm">Valid for 30 days</p>
             </div>
@@ -310,7 +310,7 @@ export default function AIAdvisorWidget() {
               </button>
               <button
                 onClick={handleBuyCredits}
-                className="flex-1 bg-gradient-to-r from-emerald-500 to-green-600 text-white py-3 rounded-xl font-semibold hover:from-emerald-600 hover:to-green-700 transition"
+                className="flex-1 bg-gradient-to-r from-[#00ff9d] to-green-500 text-black py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-[#00ff9d]/50 transition"
               >
                 Buy Now
               </button>
