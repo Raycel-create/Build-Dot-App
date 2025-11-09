@@ -15,34 +15,34 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-[#030014] text-white">
       {/* Navigation */}
-      <nav className="border-b border-white/5 sticky top-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-xl">
-        <div className="container mx-auto px-6 py-4">
+      <nav className="border-b border-white/[0.08] sticky top-0 z-50 bg-[#030014]/80 backdrop-blur-xl">
+        <div className="container mx-auto px-6 py-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#00ff9d] to-green-500 rounded-lg flex items-center justify-center shadow-lg shadow-[#00ff9d]/30">
-                <span className="text-black font-bold text-lg">E</span>
+              <div className="w-9 h-9 bg-gradient-to-br from-[#00ff9d] via-purple-500 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg shadow-[#00ff9d]/20">
+                <span className="text-black font-bold text-base">E</span>
               </div>
-              <span className="text-xl font-bold tracking-tight">
-                Emergent <span className="text-[#00ff9d]">Advisor Hub</span>
+              <span className="text-lg font-semibold tracking-tight">
+                Emergent <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ff9d] to-cyan-400">Advisor Hub</span>
               </span>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <Link href="#features" className="text-sm text-gray-400 hover:text-[#00ff9d] transition-colors">
+              <Link href="#features" className="text-sm text-gray-400 hover:text-white transition-colors">
                 Features
               </Link>
-              <Link href="/pricing" className="text-sm text-gray-400 hover:text-[#00ff9d] transition-colors">
+              <Link href="/pricing" className="text-sm text-gray-400 hover:text-white transition-colors">
                 Pricing
               </Link>
-              <Link href="/consultation" className="text-sm text-gray-400 hover:text-[#00ff9d] transition-colors">
-                AI Consultation
+              <Link href="/consultation" className="text-sm text-gray-400 hover:text-white transition-colors">
+                Consultation
               </Link>
               <Link
                 href="/builder"
-                className="bg-gradient-to-r from-[#00ff9d] to-green-500 text-black px-6 py-2.5 rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-[#00ff9d]/50 transition-all"
+                className="relative group bg-gradient-to-r from-[#00ff9d] to-cyan-400 text-black px-5 py-2.5 rounded-xl text-sm font-semibold hover:shadow-xl hover:shadow-[#00ff9d]/30 transition-all overflow-hidden"
               >
-                Start Building
+                <span className="relative z-10">Start Building</span>
               </Link>
             </div>
           </div>
@@ -50,176 +50,208 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 py-12">
-        <div className="max-w-5xl mx-auto">
-          {/* Hero Card */}
-          <div className="bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl p-10 text-center shadow-2xl mb-6">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-              Build applications
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ff9d] to-green-400"> with just words</span>
-            </h1>
-
-            <p className="text-base text-gray-400 mb-8 max-w-2xl mx-auto">
-              Transform your ideas into production-ready applications using AI.
-              No code, no complexity—just describe what you want to build.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
-              <Link
-                href="/builder"
-                className="bg-gradient-to-r from-[#00ff9d] to-green-500 text-black px-8 py-3 rounded-xl text-base font-semibold hover:shadow-xl hover:shadow-[#00ff9d]/40 transition-all"
-              >
-                Start Building Free →
-              </Link>
-              <Link
-                href="/consultation"
-                className="bg-white/5 backdrop-blur-sm text-white px-8 py-3 rounded-xl text-base font-semibold hover:bg-white/10 transition-all border border-white/20 hover:border-[#00ff9d]/50"
-              >
-                Get AI Consultation
-              </Link>
-            </div>
+      <section className="container mx-auto px-6 pt-20 pb-24">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-white/[0.05] backdrop-blur-sm border border-white/[0.08] rounded-full px-4 py-2 mb-8">
+            <span className="w-2 h-2 bg-[#00ff9d] rounded-full animate-pulse"></span>
+            <span className="text-sm text-gray-300">AI-Powered Application Builder</span>
           </div>
 
-          {/* Stats Row */}
-          <div className="grid grid-cols-3 gap-4 mb-6">
-            <div className="bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-xl p-5 text-center hover:border-[#00ff9d]/30 transition-all">
-              <div className="text-3xl font-bold text-[#00ff9d] mb-1">10K+</div>
-              <div className="text-xs text-gray-400">Apps Built</div>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-[1.1]">
+            Think better.
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ff9d] via-purple-400 to-cyan-400">
+              Build faster.
+            </span>
+          </h1>
+
+          <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Transform your ideas into production-ready applications using AI.
+            No code, no complexity—just describe what you want to build.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20">
+            <Link
+              href="/builder"
+              className="group relative bg-gradient-to-r from-[#00ff9d] to-cyan-400 text-black px-10 py-5 rounded-2xl text-lg font-semibold hover:shadow-2xl hover:shadow-[#00ff9d]/40 transition-all"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                Start Building Free
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
+            </Link>
+            <Link
+              href="/consultation"
+              className="bg-white/[0.05] backdrop-blur-sm text-white px-10 py-5 rounded-2xl text-lg font-semibold hover:bg-white/[0.08] transition-all border border-white/[0.08] hover:border-white/20"
+            >
+              Get AI Consultation
+            </Link>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-6 max-w-3xl mx-auto">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00ff9d]/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 hover:bg-white/[0.05] transition-all">
+                <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00ff9d] to-cyan-400 mb-2">10K+</div>
+                <div className="text-sm text-gray-400">Apps Built</div>
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-xl p-5 text-center hover:border-[#00ff9d]/30 transition-all">
-              <div className="text-3xl font-bold text-[#00ff9d] mb-1">50+</div>
-              <div className="text-xs text-gray-400">AI Models</div>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 hover:bg-white/[0.05] transition-all">
+                <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">50+</div>
+                <div className="text-sm text-gray-400">AI Models</div>
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-xl p-5 text-center hover:border-[#00ff9d]/30 transition-all">
-              <div className="text-3xl font-bold text-[#00ff9d] mb-1">99.9%</div>
-              <div className="text-xs text-gray-400">Uptime</div>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 hover:bg-white/[0.05] transition-all">
+                <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-2">99.9%</div>
+                <div className="text-sm text-gray-400">Uptime</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Need Help Deciding Section */}
-      <section className="container mx-auto px-6 py-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-gradient-to-br from-[#00ff9d]/5 to-transparent border border-[#00ff9d]/20 rounded-2xl p-8">
-            <div className="text-center mb-6">
-              <h2 className="text-2xl md:text-3xl font-bold mb-3">
-                Not yet sure what application? 🤔
-              </h2>
-              <p className="text-sm text-gray-400 max-w-2xl mx-auto">
-                Let us help you so you won't waste credentials. Chat with our AI advisors to refine your ideas.
-              </p>
-            </div>
+      {/* AI Advisors Section */}
+      <section className="container mx-auto px-6 py-24">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+              Not sure what to build?
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Chat with our AI advisors to refine your ideas before you start building.
+            </p>
+          </div>
 
-            {/* AI Helper Buttons */}
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
-              {aiHelpers.map((ai) => (
-                <button
-                  key={ai.id}
-                  onClick={() => setSelectedAI(ai.id)}
-                  className="group bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-[#00ff9d]/30 rounded-xl p-4 transition-all text-center"
-                >
-                  <div className={`w-12 h-12 mx-auto mb-2 bg-gradient-to-r ${ai.color} rounded-lg flex items-center justify-center text-2xl group-hover:scale-105 transition-transform shadow-md`}>
-                    {ai.icon}
-                  </div>
-                  <div className="text-xs font-semibold">{ai.name}</div>
-                </button>
-              ))}
-            </div>
-
-            {/* Credits Info Box */}
-            <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 text-center">
-              <div className="flex items-center justify-center gap-2 mb-2">
-                <span className="w-2 h-2 bg-[#00ff9d] rounded-full animate-pulse"></span>
-                <span className="text-[#00ff9d] font-semibold text-sm">5 free messages every 24 hours</span>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#00ff9d]/10 via-purple-500/10 to-cyan-400/10 rounded-3xl blur-3xl"></div>
+            <div className="relative bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] rounded-3xl p-10">
+              {/* AI Helper Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+                {aiHelpers.map((ai) => (
+                  <button
+                    key={ai.id}
+                    onClick={() => setSelectedAI(ai.id)}
+                    className="group relative bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] hover:border-white/20 rounded-2xl p-6 transition-all text-center"
+                  >
+                    <div className={`w-14 h-14 mx-auto mb-3 bg-gradient-to-r ${ai.color} rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform shadow-lg`}>
+                      {ai.icon}
+                    </div>
+                    <div className="text-sm font-semibold text-gray-200">{ai.name}</div>
+                  </button>
+                ))}
               </div>
-              <p className="text-xs text-gray-400">
-                After your free messages, unlock 25 more for just 15 credits ($15)
-              </p>
-              <p className="text-xs text-gray-500 mt-3">Click the floating 💡 button at bottom-right to start chatting</p>
+
+              {/* Credits Info */}
+              <div className="bg-gradient-to-r from-[#00ff9d]/5 to-cyan-400/5 backdrop-blur-sm border border-[#00ff9d]/20 rounded-2xl p-6 text-center">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <span className="w-2 h-2 bg-[#00ff9d] rounded-full animate-pulse"></span>
+                  <span className="text-[#00ff9d] font-semibold">5 free messages every 24 hours</span>
+                </div>
+                <p className="text-sm text-gray-400 mb-3">
+                  After your free messages, unlock 25 more for just $15
+                </p>
+                <p className="text-xs text-gray-500">Click the 💡 floating button to start chatting</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="container mx-auto px-6 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+      <section id="features" className="container mx-auto px-6 py-24">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">
             Everything you need.
             <br />
-            <span className="text-gray-600">Nothing you don't.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-500 to-gray-700">Nothing you don't.</span>
           </h2>
-          <p className="text-sm text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Powerful features designed to make application development effortless.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {[
             {
-              icon: "M13 10V3L4 14h7v7l9-11h-7z",
               title: "Multi-AI Support",
-              description: "Powered by GPT-4, Claude, DeepSeek, and more. Choose the best AI for your project."
+              description: "Powered by GPT-4, Claude, DeepSeek, and more. Choose the best AI for your project.",
+              gradient: "from-[#00ff9d] to-cyan-400"
             },
             {
-              icon: "M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z",
               title: "Smart Consultation",
-              description: "Not sure what to build? Our AI consultants help you define and refine your ideas."
+              description: "Not sure what to build? Our AI consultants help you define and refine your ideas.",
+              gradient: "from-purple-400 to-pink-400"
             },
             {
-              icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4",
               title: "Instant Generation",
-              description: "From idea to working app in seconds. Preview, iterate, and export instantly."
+              description: "From idea to working app in seconds. Preview, iterate, and export instantly.",
+              gradient: "from-cyan-400 to-blue-400"
             },
             {
-              icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
               title: "Clean Code Export",
-              description: "Get production-ready, well-structured code. No lock-in, full ownership."
+              description: "Get production-ready, well-structured code. No lock-in, full ownership.",
+              gradient: "from-[#00ff9d] to-green-400"
             },
             {
-              icon: "M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z",
               title: "Responsive Design",
-              description: "Every app works beautifully on desktop, tablet, and mobile. Automatically."
+              description: "Every app works beautifully on desktop, tablet, and mobile. Automatically.",
+              gradient: "from-purple-500 to-indigo-400"
             },
             {
-              icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
               title: "Secure & Reliable",
-              description: "Built on cutting-edge infrastructure. Deploy globally with zero configuration."
+              description: "Built on cutting-edge infrastructure. Deploy globally with zero configuration.",
+              gradient: "from-pink-400 to-purple-500"
             }
           ].map((feature, i) => (
             <div
               key={i}
-              className="bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-[#00ff9d]/30 transition-all"
+              className="group relative"
             >
-              <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+              <div className={`absolute inset-0 bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-20 rounded-3xl blur-2xl transition-opacity`}></div>
+              <div className="relative bg-white/[0.02] backdrop-blur-sm border border-white/[0.08] hover:border-white/20 rounded-3xl p-8 transition-all h-full">
+                <div className={`inline-block px-4 py-2 rounded-xl bg-gradient-to-r ${feature.gradient} text-black text-xs font-bold mb-4`}>
+                  FEATURE
+                </div>
+                <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-6 py-16">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center bg-gradient-to-br from-[#00ff9d]/10 to-transparent backdrop-blur-sm p-12 rounded-2xl border border-[#00ff9d]/20 shadow-xl shadow-[#00ff9d]/5">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-              Ready to build something amazing?
+      <section className="container mx-auto px-6 py-32">
+        <div className="max-w-5xl mx-auto relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#00ff9d]/20 via-purple-500/20 to-cyan-400/20 rounded-[40px] blur-3xl"></div>
+          <div className="relative bg-white/[0.02] backdrop-blur-xl border border-white/[0.08] rounded-[40px] p-16 text-center">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+              Ready to build
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ff9d] via-purple-400 to-cyan-400">
+                something amazing?
+              </span>
             </h2>
-            <p className="text-base text-gray-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
               Join thousands of developers, founders, and creators building the future with AI.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/builder"
-                className="bg-gradient-to-r from-[#00ff9d] to-green-500 text-black px-10 py-3 rounded-xl text-base font-semibold hover:shadow-xl hover:shadow-[#00ff9d]/40 transition-all"
+                className="bg-gradient-to-r from-[#00ff9d] to-cyan-400 text-black px-12 py-5 rounded-2xl text-lg font-semibold hover:shadow-2xl hover:shadow-[#00ff9d]/40 transition-all"
               >
                 Start Building Free
               </Link>
               <Link
                 href="/consultation"
-                className="bg-white/5 backdrop-blur-sm text-white px-10 py-3 rounded-xl text-base font-semibold hover:bg-white/10 transition-all border border-white/20 hover:border-[#00ff9d]/50"
+                className="bg-white/[0.05] backdrop-blur-sm text-white px-12 py-5 rounded-2xl text-lg font-semibold hover:bg-white/[0.08] transition-all border border-white/[0.08] hover:border-white/20"
               >
                 Get Expert Help
               </Link>
@@ -229,54 +261,54 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 mt-12">
-        <div className="container mx-auto px-6 py-10">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+      <footer className="border-t border-white/[0.08] mt-20">
+        <div className="container mx-auto px-6 py-16">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 bg-gradient-to-br from-[#00ff9d] to-green-500 rounded-lg flex items-center justify-center shadow-md shadow-[#00ff9d]/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-9 h-9 bg-gradient-to-br from-[#00ff9d] via-purple-500 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg shadow-[#00ff9d]/20">
                   <span className="text-black font-bold text-base">E</span>
                 </div>
-                <span className="text-base font-bold">
-                  Emergent <span className="text-[#00ff9d]">Hub</span>
+                <span className="text-base font-semibold">
+                  Emergent <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ff9d] to-cyan-400">Hub</span>
                 </span>
               </div>
-              <p className="text-xs text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed">
                 Build applications with AI.
                 <br />No coding required.
               </p>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-3 text-xs text-gray-400">Product</h4>
-              <ul className="space-y-2">
-                <li><Link href="/builder" className="text-xs text-gray-500 hover:text-[#00ff9d] transition-colors">Builder</Link></li>
-                <li><Link href="/pricing" className="text-xs text-gray-500 hover:text-[#00ff9d] transition-colors">Pricing</Link></li>
-                <li><Link href="/consultation" className="text-xs text-gray-500 hover:text-[#00ff9d] transition-colors">AI Consultation</Link></li>
+              <h4 className="font-semibold mb-4 text-sm text-gray-300">Product</h4>
+              <ul className="space-y-3">
+                <li><Link href="/builder" className="text-sm text-gray-500 hover:text-[#00ff9d] transition-colors">Builder</Link></li>
+                <li><Link href="/pricing" className="text-sm text-gray-500 hover:text-[#00ff9d] transition-colors">Pricing</Link></li>
+                <li><Link href="/consultation" className="text-sm text-gray-500 hover:text-[#00ff9d] transition-colors">AI Consultation</Link></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-3 text-xs text-gray-400">Company</h4>
-              <ul className="space-y-2">
-                <li><Link href="#" className="text-xs text-gray-500 hover:text-[#00ff9d] transition-colors">About</Link></li>
-                <li><Link href="#" className="text-xs text-gray-500 hover:text-[#00ff9d] transition-colors">Terms</Link></li>
-                <li><Link href="#" className="text-xs text-gray-500 hover:text-[#00ff9d] transition-colors">Privacy</Link></li>
+              <h4 className="font-semibold mb-4 text-sm text-gray-300">Company</h4>
+              <ul className="space-y-3">
+                <li><Link href="#" className="text-sm text-gray-500 hover:text-[#00ff9d] transition-colors">About</Link></li>
+                <li><Link href="#" className="text-sm text-gray-500 hover:text-[#00ff9d] transition-colors">Terms</Link></li>
+                <li><Link href="#" className="text-sm text-gray-500 hover:text-[#00ff9d] transition-colors">Privacy</Link></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-3 text-xs text-gray-400">Connect</h4>
-              <ul className="space-y-2">
-                <li><Link href="https://github.com/Raycel-create/Build-Dot-App" className="text-xs text-gray-500 hover:text-[#00ff9d] transition-colors">GitHub</Link></li>
-                <li><Link href="#" className="text-xs text-gray-500 hover:text-[#00ff9d] transition-colors">Twitter</Link></li>
-                <li><Link href="#" className="text-xs text-gray-500 hover:text-[#00ff9d] transition-colors">Discord</Link></li>
+              <h4 className="font-semibold mb-4 text-sm text-gray-300">Connect</h4>
+              <ul className="space-y-3">
+                <li><Link href="https://github.com/Raycel-create/Build-Dot-App" className="text-sm text-gray-500 hover:text-[#00ff9d] transition-colors">GitHub</Link></li>
+                <li><Link href="#" className="text-sm text-gray-500 hover:text-[#00ff9d] transition-colors">Twitter</Link></li>
+                <li><Link href="#" className="text-sm text-gray-500 hover:text-[#00ff9d] transition-colors">Discord</Link></li>
               </ul>
             </div>
           </div>
 
-          <div className="pt-6 border-t border-white/5 text-center">
-            <div className="text-xs text-gray-500">
+          <div className="pt-8 border-t border-white/[0.08] text-center">
+            <div className="text-sm text-gray-500">
               © 2025 Emergent Advisor Hub. Built with Next.js, Supabase, and AI.
             </div>
           </div>
