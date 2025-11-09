@@ -14,10 +14,15 @@
   "license": "ISC",
   "dependencies": {
     "@ai-sdk/openai": "^2.0.64",
+    "@anthropic-ai/sdk": "^0.68.0",
+    "@clerk/nextjs": "^6.34.5",
     "ai": "^5.0.89",
     "next": "^16.0.1",
+    "openai": "^6.8.1",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "stripe": "^19.3.0",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.17",
