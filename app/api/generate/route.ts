@@ -46,7 +46,6 @@ Requirements:
         { role: "user", content: prompt }
       ],
       temperature: 0.7,
-      maxTokens: 2000,
     });
 
     // Extract code if wrapped in markdown code blocks
