@@ -24,7 +24,6 @@ export default function Builder() {
       setGeneratedCode(data.code || "");
     } catch (error) {
       console.error("Error generating app:", error);
-      // Fallback demo code if API fails
       setGeneratedCode(generateDemoCode(prompt));
     } finally {
       setIsGenerating(false);
@@ -32,50 +31,102 @@ export default function Builder() {
   };
 
   const generateDemoCode = (userPrompt: string) => {
-    return `
-<!DOCTYPE html>
+    return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generated App</title>
+  <title>${prompt.slice(0, 50)}</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen p-8">
-  <div class="max-w-4xl mx-auto">
-    <div class="bg-white rounded-2xl shadow-xl p-8">
-      <h1 class="text-4xl font-bold text-gray-800 mb-4">Your App: ${prompt}</h1>
-      <p class="text-gray-600 mb-6">This is a demo app generated based on your prompt!</p>
-
-      <div class="grid md:grid-cols-2 gap-6 mb-8">
-        <div class="bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl p-6 text-white">
-          <h2 class="text-2xl font-bold mb-2">Feature 1</h2>
-          <p>Amazing functionality that does exactly what you need.</p>
-        </div>
-        <div class="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl p-6 text-white">
-          <h2 class="text-2xl font-bold mb-2">Feature 2</h2>
-          <p>Powerful tools at your fingertips.</p>
-        </div>
+<body class="bg-[#08090a] min-h-screen p-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="bg-white/[0.02] border border-white/10 rounded-2xl overflow-hidden">
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-[#055ffa] to-purple-600 p-8 text-white">
+        <h1 class="text-4xl font-bold mb-2">${prompt}</h1>
+        <p class="text-blue-100">AI-Generated Application</p>
       </div>
 
-      <div class="bg-gray-50 rounded-lg p-6">
-        <h3 class="text-xl font-semibold text-gray-800 mb-4">Interactive Demo</h3>
-        <button
-          onclick="alert('Button clicked! Your app is working.')"
-          class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition"
-        >
-          Try Me!
-        </button>
-      </div>
+      <!-- Content -->
+      <div class="p-8">
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-gradient-to-br from-[#055ffa]/20 to-purple-500/20 rounded-xl p-6 text-white border border-white/10 hover:border-white/20 transition">
+            <div class="text-3xl mb-3">✨</div>
+            <h2 class="text-2xl font-bold mb-2">Feature One</h2>
+            <p class="text-gray-300">Powerful functionality tailored to your needs.</p>
+          </div>
 
-      <div class="mt-8 text-center text-gray-500">
-        <p>Built with AI • Powered by Emergent</p>
+          <div class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl p-6 text-white border border-white/10 hover:border-white/20 transition">
+            <div class="text-3xl mb-3">🚀</div>
+            <h2 class="text-2xl font-bold mb-2">Feature Two</h2>
+            <p class="text-gray-300">Lightning-fast performance and reliability.</p>
+          </div>
+        </div>
+
+        <!-- Interactive Section -->
+        <div class="bg-white/[0.02] border border-white/10 rounded-xl p-6 mb-6">
+          <h3 class="text-2xl font-bold text-white mb-4">Interactive Demo</h3>
+          <div class="flex gap-4">
+            <button
+              onclick="handleClick()"
+              class="flex-1 bg-[#055ffa] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#044dd9] transition"
+            >
+              Primary Action
+            </button>
+            <button
+              onclick="handleSecondClick()"
+              class="flex-1 bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
+            >
+              Secondary Action
+            </button>
+          </div>
+          <div id="output" class="mt-4 p-4 bg-white/[0.02] rounded-lg border border-white/10 hidden">
+            <p class="text-gray-300"></p>
+          </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="grid grid-cols-3 gap-4 mb-6">
+          <div class="text-center p-4 bg-[#055ffa]/10 border border-white/10 rounded-lg">
+            <div class="text-3xl font-bold text-[#055ffa]">100+</div>
+            <div class="text-sm text-gray-400">Users</div>
+          </div>
+          <div class="text-center p-4 bg-purple-500/10 border border-white/10 rounded-lg">
+            <div class="text-3xl font-bold text-purple-400">50+</div>
+            <div class="text-sm text-gray-400">Features</div>
+          </div>
+          <div class="text-center p-4 bg-pink-500/10 border border-white/10 rounded-lg">
+            <div class="text-3xl font-bold text-pink-400">24/7</div>
+            <div class="text-sm text-gray-400">Support</div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-gray-500 pt-6 border-t border-white/10">
+          <p>🤖 Built with AI • Powered by Emergent</p>
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function handleClick() {
+      const output = document.getElementById('output');
+      output.classList.remove('hidden');
+      output.querySelector('p').textContent = '✅ Action completed successfully!';
+      setTimeout(() => output.classList.add('hidden'), 3000);
+    }
+
+    function handleSecondClick() {
+      const output = document.getElementById('output');
+      output.classList.remove('hidden');
+      output.querySelector('p').textContent = '⚡ Secondary action triggered!';
+      setTimeout(() => output.classList.add('hidden'), 3000);
+    }
+  </script>
 </body>
-</html>
-    `.trim();
+</html>`;
   };
 
   const handleExport = () => {
@@ -100,21 +151,23 @@ export default function Builder() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#08090a] text-white">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
-        <div className="container mx-auto px-6 py-4">
+      <header className="border-b border-white/5 sticky top-0 z-10 bg-[#08090a]/95 backdrop-blur-sm">
+        <div className="container mx-auto px-6 py-5">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-purple-600">
-              Emergent
+            <Link href="/" className="text-xl font-semibold tracking-tight hover:text-gray-300 transition">
+              emergent
             </Link>
             <div className="flex items-center gap-4">
               {generatedCode && (
                 <button
                   onClick={handleExport}
-                  className="flex items-center gap-2 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition"
+                  className="flex items-center gap-2 bg-white/5 border border-white/10 text-white px-4 py-2 rounded-lg hover:bg-white/10 transition text-sm"
                 >
-                  <span>📥</span>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
                   Export
                 </button>
               )}
@@ -124,44 +177,49 @@ export default function Builder() {
       </header>
 
       <div className="container mx-auto px-6 py-8">
-        <div className="grid lg:grid-cols-2 gap-8 h-[calc(100vh-120px)]">
+        <div className="grid lg:grid-cols-2 gap-6 h-[calc(100vh-120px)]">
           {/* Left Panel - Input */}
-          <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">
-              Describe Your App
-            </h2>
-            <p className="text-gray-600 mb-6">
-              Tell us what you want to build, and our AI will create it for you.
-            </p>
+          <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 flex flex-col">
+            <div className="mb-6">
+              <h2 className="text-3xl font-bold mb-2 tracking-tight">
+                Describe your app
+              </h2>
+              <p className="text-gray-400 text-sm">
+                Tell us what you want to build in plain English
+              </p>
+            </div>
 
             <textarea
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
-              placeholder="e.g., Create a todo list app with a clean design, ability to add, remove, and mark tasks as complete..."
-              className="flex-1 w-full p-4 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-purple-500 mb-4"
+              placeholder="Example: Create a todo list app with a clean, minimalist design. Include the ability to add, remove, and mark tasks as complete. Use a dark theme with blue accents..."
+              className="flex-1 w-full p-4 bg-white/[0.02] border border-white/10 rounded-xl resize-none focus:outline-none focus:border-[#055ffa] transition text-white placeholder-gray-500 mb-4"
             />
 
             <button
               onClick={handleGenerate}
               disabled={isGenerating || !prompt.trim()}
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-[#055ffa] text-white py-4 rounded-xl font-medium hover:bg-[#044dd9] transition disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#055ffa] shadow-lg shadow-blue-500/20"
             >
               {isGenerating ? (
                 <span className="flex items-center justify-center gap-2">
-                  <span className="animate-spin">⚙️</span>
+                  <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                  </svg>
                   Generating...
                 </span>
               ) : (
-                "Generate App"
+                "Generate App →"
               )}
             </button>
 
             {generatedCode && (
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <h3 className="font-semibold text-gray-800 mb-3">
+              <div className="mt-6 pt-6 border-t border-white/10">
+                <h3 className="font-semibold mb-3 text-sm text-gray-400">
                   Generated Code
                 </h3>
-                <div className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-auto max-h-48 text-xs font-mono">
+                <div className="bg-[#08090a] border border-white/10 p-4 rounded-xl overflow-auto max-h-48 text-xs font-mono text-gray-300">
                   {generatedCode}
                 </div>
               </div>
@@ -169,47 +227,53 @@ export default function Builder() {
           </div>
 
           {/* Right Panel - Preview */}
-          <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-2xl font-bold text-gray-800">Preview</h2>
+          <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 flex flex-col">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold tracking-tight">Preview</h2>
               <div className="flex gap-2">
                 <button
                   onClick={() => setPreviewMode("desktop")}
-                  className={`p-2 rounded ${
+                  className={`p-2.5 rounded-lg text-sm transition ${
                     previewMode === "desktop"
-                      ? "bg-purple-600 text-white"
-                      : "bg-gray-200 text-gray-600"
+                      ? "bg-[#055ffa] text-white"
+                      : "bg-white/5 text-gray-400 hover:bg-white/10"
                   }`}
                   title="Desktop"
                 >
-                  💻
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
                 </button>
                 <button
                   onClick={() => setPreviewMode("tablet")}
-                  className={`p-2 rounded ${
+                  className={`p-2.5 rounded-lg text-sm transition ${
                     previewMode === "tablet"
-                      ? "bg-purple-600 text-white"
-                      : "bg-gray-200 text-gray-600"
+                      ? "bg-[#055ffa] text-white"
+                      : "bg-white/5 text-gray-400 hover:bg-white/10"
                   }`}
                   title="Tablet"
                 >
-                  📱
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
                 </button>
                 <button
                   onClick={() => setPreviewMode("mobile")}
-                  className={`p-2 rounded ${
+                  className={`p-2.5 rounded-lg text-sm transition ${
                     previewMode === "mobile"
-                      ? "bg-purple-600 text-white"
-                      : "bg-gray-200 text-gray-600"
+                      ? "bg-[#055ffa] text-white"
+                      : "bg-white/5 text-gray-400 hover:bg-white/10"
                   }`}
                   title="Mobile"
                 >
-                  📱
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
                 </button>
               </div>
             </div>
 
-            <div className="flex-1 bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center">
+            <div className="flex-1 bg-[#08090a] border border-white/10 rounded-xl overflow-hidden flex items-center justify-center">
               {generatedCode ? (
                 <iframe
                   srcDoc={generatedCode}
@@ -219,10 +283,12 @@ export default function Builder() {
                   sandbox="allow-scripts"
                 />
               ) : (
-                <div className="text-center text-gray-400">
-                  <div className="text-6xl mb-4">🎨</div>
-                  <p className="text-lg">Your app preview will appear here</p>
-                  <p className="text-sm mt-2">
+                <div className="text-center text-gray-500 p-8">
+                  <svg className="w-16 h-16 mx-auto mb-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <p className="text-base font-medium text-gray-400 mb-2">No preview yet</p>
+                  <p className="text-sm text-gray-500">
                     Describe your app and click Generate
                   </p>
                 </div>
