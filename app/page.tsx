@@ -54,16 +54,6 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           {/* Hero Card */}
           <div className="bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl p-10 text-center shadow-2xl mb-6">
-            {/* Small Icon */}
-            <div className="relative w-10 h-10 mx-auto mb-4">
-              <div className="absolute inset-0 bg-[#00ff9d] rounded-full blur-lg opacity-20"></div>
-              <div className="relative w-10 h-10 bg-gradient-to-br from-[#00ff9d] to-green-500 rounded-full flex items-center justify-center shadow-md shadow-[#00ff9d]/30">
-                <svg className="w-5 h-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-            </div>
-
             <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
               Build applications
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ff9d] to-green-400"> with just words</span>
@@ -203,11 +193,6 @@ export default function Home() {
               key={i}
               className="bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-[#00ff9d]/30 transition-all"
             >
-              <div className="w-8 h-8 bg-[#00ff9d]/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#00ff9d]/20 transition-colors">
-                <svg className="w-4 h-4 text-[#00ff9d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={feature.icon} />
-                </svg>
-              </div>
               <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
               <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
             </div>
